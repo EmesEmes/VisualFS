@@ -19,14 +19,17 @@ namespace DATOS
             {
                 SqlConnection conec = new SqlConnection(con.conec());
                 conec.Open();
-                SqlCommand cmd = new SqlCommand("spSaveorUpdateEvento", conec);
-                //cmd.Parameters.Add("@id", SqlDbType.Int).Value = dato[0].ToString();
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = null;
-                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar,200).Value = dato[0].ToString();
-                cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar,200).Value = dato[1].ToString();
-                cmd.Parameters.Add("@Fecha", SqlDbType.VarChar, 200).Value = dato[2].ToString();
-                cmd.Parameters.Add("@Hora", SqlDbType.VarChar,200).Value = dato[3].ToString();
-                cmd.Parameters.Add("@Remuneracion", SqlDbType.VarChar, 200).Value = dato[4].ToString();
+                SqlCommand cmd = new SqlCommand("spSaveorUpdateEvento", conec);                
+                if (dato[0] != null)
+                {
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = dato[0].ToString();
+                }
+                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar,200).Value = dato[1].ToString();
+                cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar,200).Value = dato[2].ToString();
+                cmd.Parameters.Add("@Fecha", SqlDbType.VarChar, 200).Value = dato[3].ToString();
+                cmd.Parameters.Add("@Hora", SqlDbType.VarChar,200).Value = dato[4].ToString();
+                cmd.Parameters.Add("@Remuneracion", SqlDbType.VarChar, 200).Value = dato[5].ToString();
+                cmd.Parameters.Add("@Conferencista", SqlDbType.VarChar, 50).Value = dato[6].ToString();
                 cmd.CommandType = CommandType.StoredProcedure;
                 ok = cmd.ExecuteNonQuery();
                 if (ok == 1)

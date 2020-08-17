@@ -3,4 +3,3 @@ C:\Users\andre\source\repos\EmiEvent\DATOS\bin\Debug\DATOS.pdb
 C:\Users\andre\source\repos\EmiEvent\DATOS\obj\Debug\DATOS.csproj.CoreCompileInputs.cache
 C:\Users\andre\source\repos\EmiEvent\DATOS\obj\Debug\DATOS.dll
 C:\Users\andre\source\repos\EmiEvent\DATOS\obj\Debug\DATOS.pdb
-C:\Users\andre\source\repos\EmiEvent\DATOS\obj\Debug\DATOS.csprojAssemblyReference.cache

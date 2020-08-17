@@ -21,16 +21,16 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#"><img src="../../img/logo.jpg" alt="Alternate Text" height="50" /> EmiEvent </a>
+    <a class="navbar-brand" href="./EmiEvent_Eventos.aspx" target="_blank"><img src="../../img/logo.jpg" alt="Alternate Text" height="50" /> EmiEvent </a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="./Eventos.aspx">Eventos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Conferencistas</a>
+        <a class="nav-link" href="./Conferencistas.aspx">Conferencistas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Participantes</a>
+        <a class="nav-link" href="./Participantes.aspx">Participantes</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

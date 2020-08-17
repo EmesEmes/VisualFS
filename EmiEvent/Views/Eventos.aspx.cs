@@ -22,18 +22,31 @@ namespace EmiEvent.Views
         {
             try
             {
-                //var fec = "2020-08-08";
+                var id = "";
+                if (hiddenId.Value != "")
+                {
+                    id = hiddenId.Value;
+                }
+                else
+                {
+                    id = null;
+                }
+
                 string[] dato = {
+                                id,
                                 txtNombre.Text,
                                 txtDescripcion.Text,
                                 txtFecha.Text,
                                 txtHora.Text,
                                 ddpRemu.Text,
+                                ddpCapacitador.Text,
+                                id="",
                                 txtNombre.Text="",
                                 txtDescripcion.Text="",
                                 txtFecha.Text="",
                                 txtHora.Text="",
-                                ddpRemu.Text=""
+                                ddpRemu.Text="",
+                                ddpCapacitador.Text=""
                                 };
                 ce.SaveorUpdateEvento(dato);
 
@@ -46,21 +59,29 @@ namespace EmiEvent.Views
             Response.Redirect("~/Views/Eventos.aspx");
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
+        protected void GVbtnEditar(object sender, EventArgs e)
         {
+            btnGuardar.Text = "Actualizar";
+            btnGuardar.CssClass = "btn btn-warning";
+            int rowid = ((GridViewRow)(sender as Control).NamingContainer).RowIndex;
+            hiddenId.Value = GVEventos.Rows[rowid].Cells[0].Text;
+            txtNombre.Text = GVEventos.Rows[rowid].Cells[1].Text;
+            txtDescripcion.Text = GVEventos.Rows[rowid].Cells[2].Text;
+            txtFecha.Text = GVEventos.Rows[rowid].Cells[3].Text;
+            txtHora.Text = GVEventos.Rows[rowid].Cells[4].Text;
+            ddpRemu.SelectedValue = GVEventos.Rows[rowid].Cells[5].Text;
+            ddpCapacitador.SelectedValue = GVEventos.Rows[rowid].Cells[6].Text;
+        }
+
+        protected void GVbtnEliminar(object sender, EventArgs e)
+        {
+            int rowid = ((GridViewRow)(sender as Control).NamingContainer).RowIndex;
+            var id = GVEventos.Rows[rowid].Cells[0].Text;
             try
             {
                 string[] dato = {
-                                txtNombre.Text,
-                                txtDescripcion.Text,
-                                txtFecha.Text,
-                                txtHora.Text,
-                                ddpRemu.Text,
-                                txtNombre.Text="",
-                                txtDescripcion.Text="",
-                                txtFecha.Text="",
-                                txtHora.Text="",
-                                ddpRemu.Text=""
+                                id,                               
+                                id=""                                
                                 };
                 ce.DeleteEvento(dato);
 
