@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ManageConferencista.cs" />
     <Compile Include="ManageEvento.cs" />
+    <Compile Include="ManageParticipantes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -208,8 +208,8 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        
-                            <div class="control-group">
+                        <asp:HiddenField ID="hiddenId" runat="server" />
+                            <div class="control-group">                                
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Nombre</label>                                    
                                     <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre" class="form-control" data-validation-required-message="Please enter your name."></asp:TextBox>
@@ -251,10 +251,11 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+                        <br />
                             <div class="control-group">
                                 <div class="form-group ">
-                                    <label>Evento</label>
-                                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="eveNombre" DataValueField="eveId" AppendDataBoundItems="True">
+                                    <h3>Evento</h3>
+                                    <asp:DropDownList ID="ddlEvento" runat="server" DataSourceID="SqlDataSource3" class="form-control" DataTextField="eveNombre" DataValueField="eveId" AppendDataBoundItems="True">
                                         <asp:ListItem Selected="True" Value="">- Seleccione -</asp:ListItem>
                                     </asp:DropDownList>
                                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:EmiEventConnectionString %>" SelectCommand="SELECT [eveNombre], [eveId] FROM [TBL_EVENTO]"></asp:SqlDataSource>
@@ -262,8 +263,8 @@
                             </div>
                             <br />
                             <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
-                     
+                            <div class="form-group">
+                        <asp:Button ID="btnEnviar" runat="server" class="btn btn-primary btn-xl" Text="Enviar" OnClick="btnEnviar_Click" /></div>
                     </div>
                 </div>
             </div>
@@ -294,7 +295,7 @@
                         <h4 class="text-uppercase mb-4">About Freelancer</h4>
                         <p class="lead mb-0">
                             Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
+                            <a href="./Participantes.aspx">Ingresar Sistema</a>
                             .
                         </p>
                     </div>

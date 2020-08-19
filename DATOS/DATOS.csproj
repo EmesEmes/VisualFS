@@ -44,6 +44,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="CrudConferencista.cs" />
     <Compile Include="CrudEvento.cs" />
+    <Compile Include="CrudParticipantes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
